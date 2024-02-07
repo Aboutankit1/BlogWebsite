@@ -49,7 +49,7 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
     <!--COMMENT SECTION STARTS HERE-->
 
     <!-- Comment section -->
-    {% with comment_count=obj.comments.count %}
+    {% with comment_count=y.comments.count %}
     <div
       class="comments-container text-center"
       style="margin: auto; width: 100%; max-width: 800px"
@@ -99,7 +99,7 @@ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
       <hr style="width: 50%; margin: 20px auto; border-color: white" />
       <!-- Horizontal line -->
 
-      {% for comment in obj.comments.all %}
+      {% for comment in y.comments.all %}
       <div
         style="
           margin-bottom: 20px;

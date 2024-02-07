@@ -58,5 +58,5 @@ class Comment(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
 
-    def str(self):
+    def __str__(self):
         return self.text

@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 from .models import Comment
+from django.utils import timezone
+
 
 
 
@@ -92,9 +94,8 @@ def blog_details(request,blog_id):
     z=z+1
     y.view_count=z
     y.save()
-    
-    
-    return render(request,'myblogs/blog_details.html',{"y":y})
+    form = CommentForm()
+    return render(request,'myblogs/blog_details.html',{"y":y, "form":form})
 
 def loginuser(request):
     if request.method =='GET':
@@ -187,6 +188,8 @@ def add_comment(request, blog_id):
             comment.created_at = timezone.now()  # Add this line to save the current timestamp
             comment.save()
             return redirect('blog_details', blog_id=post.id)
+        else: 
+            return HttpResponse("hello")
 
 def delete_comment(request, blog_id, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -207,7 +210,7 @@ def edit_comment(request, blog_id, comment_id):
         # Populate the form with existing comment data
         form = CommentForm(instance=comment)
     
-    return render(request, 'myblogs/edit_comment.html', {'form': form})
+        return render(request, 'myblogs/edit_comment.html', {'form': form})
 
 
 
