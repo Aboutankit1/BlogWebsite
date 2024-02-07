@@ -84,7 +84,7 @@
         
             {% for y in category  %}
             <div class="col">
-            <div class="card  mt-2 " >
+            <div class="card  mt-2  "onmouseover="showCard(this)" onmouseout="hideCard(this)" >
               
                 <img src="{{ y.blogcat_img.url }}" class="border-radius:10px"  style=" height: 250px; " alt="">
                 
@@ -121,22 +121,15 @@
 
 
 
-        <Style>
-          .hex {
-            width: 300px; /* Set width as desired */
-            height: 200px; /* Set height as desired */
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add initial shadow */
-            transition: box-shadow 0.3s ease; /* Add transition for smooth hover effect */
-          }
-          
-          .hex:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-          }
-          
-        
-        </Style>
+        <script>
+          function showCard(card) {
+        card.style.transform = 'scale(1.02)';
+      }
+      
+      function hideCard(card) {
+        card.style.transform = 'scale(1)';
+      }
+    </script>
 
 
 

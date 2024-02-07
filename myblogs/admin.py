@@ -3,6 +3,10 @@ from .models import contact_info
 from .models import Blog_Category
 from .models import blog_post
 from .models import Subscription
+from .models import Comment
+
+
+
 
 
 
@@ -15,5 +19,6 @@ admin.site.register(contact_info)
 admin.site.register(Blog_Category)
 admin.site.register(Subscription)
 admin.site.register(blog_post)
+admin.site.register(Comment)
 
 
